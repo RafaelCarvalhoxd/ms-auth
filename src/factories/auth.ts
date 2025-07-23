@@ -1,4 +1,4 @@
-import { UserClient } from '@/config/grpc/clients/user';
+import { UserClient } from '@/clients/user';
 import env from '@/config/env/env';
 import { AuthController } from '@/controller/auth';
 import { BcryptLib } from '@/lib/bcrypt';
