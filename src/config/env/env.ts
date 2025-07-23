@@ -32,5 +32,12 @@ export default {
   grpc: {
     host: process.env.GRPC_HOST || 'localhost',
     port: parseInt(process.env.GRPC_PORT || '50051', 10),
+    user: {
+      host: process.env.GRPC_USER_HOST || 'localhost',
+      port: parseInt(process.env.GRPC_USER_PORT || '50052', 10),
+    },
+  },
+  jwt: {
+    secret: process.env.JWT_SECRET || 'defaultsecret',
   },
 };
