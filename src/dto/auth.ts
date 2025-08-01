@@ -12,3 +12,7 @@ export type RegisterDto = {
   phoneNumber: string;
   gender: 'M' | 'F';
 };
+
+export type ValidTokenDto = {
+  token: string;
+};

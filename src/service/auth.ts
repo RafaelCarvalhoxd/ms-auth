@@ -47,4 +47,12 @@ export class AuthService {
     const token = await this.tokenLib.generateToken({ userId: user.id });
     return { token };
   }
+
+  async validToken(token: string): Promise<{ userId: string }> {
+    const decoded = await this.tokenLib.verifyToken(token);
+    if (!decoded || typeof decoded !== 'object' || !('userId' in decoded) || !decoded.userId) {
+      throw new UnauthorizedError('Invalid token.');
+    }
+    return { userId: decoded.userId as string };
+  }
 }
